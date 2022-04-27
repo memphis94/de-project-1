@@ -19,3 +19,5 @@
 
 ![image](https://user-images.githubusercontent.com/69753101/165421963-c43a7477-90ed-4aae-a44b-320af29ebabb.png)
 
+### Ход работы над витриной
+
