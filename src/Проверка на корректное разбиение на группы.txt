@@ -1,0 +1,14 @@
+SELECT recency,
+       COUNT(user_id)
+FROM dm_rfm_segments drs 
+GROUP BY 1;
+
+SELECT frequency,
+       COUNT(user_id)
+FROM dm_rfm_segments drs 
+GROUP BY 1;
+
+SELECT monetary_value ,
+       COUNT(user_id)
+FROM dm_rfm_segments drs 
+GROUP BY 1;

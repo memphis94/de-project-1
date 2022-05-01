@@ -1,0 +1,106 @@
+--Запросы для проверки данных в схеме production
+
+--Таблица users
+
+--Проверка на уникальность значений
+SELECT 
+	COUNT(DISTINCT id) AS uniq_user_cnt,
+	COUNT(DISTINCT name) AS uniq_name_cnt,
+	COUNT(DISTINCT login) AS uniq_login_cnt
+FROM orders
+
+--Опциональное переименование столбцов
+ALTER TABLE users RENAME COLUMN name TO login1;
+ALTER TABLE users RENAME COLUMN login TO name;
+ALTER TABLE users RENAME COLUMN login1 TO login
+
+--Таблица orderstatuses
+SELECT *
+FROM orderstatuses
+
+--Таблица orders
+
+--Проверка на уникальность значений
+SELECT 
+	COUNT(DISTINCT order_id) AS uniq_order_cnt,
+	COUNT(DISTINCT order_ts) AS uniq_order_dt_cnt,
+	COUNT(DISTINCT user_id) AS uniq_user_id_cnt
+FROM orders
+
+WITH T AS(SELECT *,
+       COUNT (order_id) OVER (PARTITION BY order_ts) AS row_num
+FROM orders)
+
+--Проверка на различие/соответствие заказов, сделанных в одно и то же время (визуальная)
+SELECT *
+FROM orders
+WHERE order_id IN (SELECT order_id
+					FROM T 
+					WHERE row_num>1)
+ORDER BY 2
+
+--Проверка соответствия id пользователя с таблицей users
+SELECT COUNT(DISTINCT user_id)
+FROM orders o 
+JOIN users u ON o.order_id =u.id 
+WHERE o.user_id<>u.id
+
+--проверка на нулевые значения 
+SELECT *
+FROM orders o 
+WHERE "cost"=0 
+
+SELECT *
+FROM orders o 
+WHERE payment=0
+
+SELECT *
+FROM orders o 
+WHERE bonus_grant = 0
+
+--Проверка глубины данных в таблице
+SELECT 
+	MIN(order_ts)::date,
+	MAX(order_ts)::date
+FROM orders
+
+
+
+
+--Таблица order_items
+
+--Выгрузка всех строк
+SELECT * 
+FROM orderitems
+
+--Просмотр количества уникальных строк
+SELECT 
+	COUNT(*),
+    COUNT(DISTINCT id) AS uniq_id_cnt,
+	COUNT(DISTINCT product_id) AS uniq_product_id_cnt,
+	COUNT(DISTINCT order_id) AS uniq_order_id_cnt
+FROM orderitems
+
+--Проверка на нулевые значения
+SELECT *
+FROM orderitems o 
+WHERE price=0
+
+SELECT *
+FROM orderitems o 
+WHERE quantity =0
+
+--Проверка на НЕ нулевые значения
+SELECT *
+FROM orderitems o 
+
+--Таблица products
+
+SELECT *
+FROM products p 
+
+
+SELECT COUNT(*) AS rows_cnt,
+       COUNT(DISTINCT id) AS uniq_id_cnt,
+       COUNT(DISTINCT name) AS uniq_name_cnt
+FROM products p 

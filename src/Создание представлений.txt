@@ -1,0 +1,17 @@
+CREATE VIEW products AS
+SELECT * FROM production.products;
+
+CREATE VIEW orderitems AS
+SELECT * FROM production.orderitems;
+
+CREATE VIEW orders AS
+SELECT * FROM production.orders;
+
+CREATE VIEW orderstatuslog AS
+SELECT * FROM production.orderstatuslog;
+
+CREATE VIEW orderstatuses AS
+SELECT * FROM production.orderstatuses;
+
+CREATE VIEW users AS
+SELECT * FROM production.users;

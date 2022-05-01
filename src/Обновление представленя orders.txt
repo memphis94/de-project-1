@@ -1,0 +1,25 @@
+DROP VIEW IF EXISTS analysis.orders;
+CREATE VIEW analysis.orders AS
+
+WITH T AS (SELECT 
+			order_id,
+			status_id,
+			dttm,
+			MAX(dttm) OVER (PARTITION BY order_id ORDER BY dttm ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS last_status_dttm
+			FROM production.orderstatuslog )
+
+SELECT 
+	o.order_id,
+	o.order_ts,
+	o.user_id,
+	o.bonus_payment,
+	o.payment,
+	o."cost",
+	o.bonus_grant,
+    T.status_id AS status
+       
+FROM T
+JOIN production.orders o ON T.order_id=o.order_id
+JOIN production.orderstatuses o2 ON T.status_id=o2.id
+WHERE dttm=last_status_dttm
+AND o2."key"='Closed';
