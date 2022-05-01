@@ -109,4 +109,26 @@
 Первичный ключ id
 Проверка, что каждое значение каждой строчки столбца price является числом, равным или с большим значением, чем ноль.
 
+#### Подготовка витрины данных.
+
+##### Создание представлений
+CREATE VIEW products AS
+SELECT * FROM production.products;
+
+CREATE VIEW orderitems AS
+SELECT * FROM production.orderitems;
+
+CREATE VIEW orders AS
+SELECT * FROM production.orders;
+
+CREATE VIEW orderstatuses AS
+SELECT * FROM production.orderstatuses;
+
+CREATE VIEW users AS
+SELECT * FROM production.users;
+
+CREATE VIEW orderstatuslog AS
+SELECT * FROM production.orderstatuslog;
+
+##### Создание витрины
 
