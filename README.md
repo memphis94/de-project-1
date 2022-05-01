@@ -131,4 +131,8 @@ CREATE VIEW orderstatuslog AS
 SELECT * FROM production.orderstatuslog;
 
 ##### Создание витрины
-
+CREATE TABLE dm_rfm_segments (
+	user_id int4 NOT NULL,
+	recency int4 NOT NULL,
+	frequency int4 NOT NULL,
+	monetary_value int4 NOT NULL)
