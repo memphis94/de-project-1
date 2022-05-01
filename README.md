@@ -136,3 +136,14 @@ CREATE TABLE dm_rfm_segments (
 	recency int4 NOT NULL,
 	frequency int4 NOT NULL,
 	monetary_value int4 NOT NULL)
+
+##### Наполнение витрины данными
+66666666666666666666666
+666666666666666666666
+
+#### Доработка витрины
+Вид обновлённых представлений
+![image](https://user-images.githubusercontent.com/69753101/166159146-ee04eebc-d6b0-4e22-b401-3fdfbd5240e8.png)
+
+##### Обновление представления orders
+
