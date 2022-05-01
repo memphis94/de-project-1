@@ -23,7 +23,7 @@
 
 #### Kачество данных схемы production.
 
-
+https://github.com/memphis94/de-project-1/blob/5cd808be625cbe4612cb62e248115dab87b8a1b7/src/%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B2%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%D1%85%20production.txt
 
 ##### Общее:
 
@@ -112,37 +112,17 @@
 #### Подготовка витрины данных.
 
 ##### Создание представлений
-CREATE VIEW products AS
-SELECT * FROM production.products;
-
-CREATE VIEW orderitems AS
-SELECT * FROM production.orderitems;
-
-CREATE VIEW orders AS
-SELECT * FROM production.orders;
-
-CREATE VIEW orderstatuses AS
-SELECT * FROM production.orderstatuses;
-
-CREATE VIEW users AS
-SELECT * FROM production.users;
-
-CREATE VIEW orderstatuslog AS
-SELECT * FROM production.orderstatuslog;
+https://github.com/memphis94/de-project-1/blob/8a5f0a0acf5cff00c80314326bea046c62c1ab8d/src/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B9.txt
 
 ##### Создание витрины
-CREATE TABLE dm_rfm_segments (
-	user_id int4 NOT NULL,
-	recency int4 NOT NULL,
-	frequency int4 NOT NULL,
-	monetary_value int4 NOT NULL)
+https://github.com/memphis94/de-project-1/blob/5cd808be625cbe4612cb62e248115dab87b8a1b7/src/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B8%D1%82%D1%80%D0%B8%D0%BD%D1%8B%20dm_rfm_segments.txt
 
 ##### Наполнение витрины данными
-src/Наполнение витрины данными.sql
+https://github.com/memphis94/de-project-1/blob/8a5f0a0acf5cff00c80314326bea046c62c1ab8d/src/%D0%9D%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B8%D1%82%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8.txt
 
 #### Доработка витрины
 Вид обновлённых представлений
 ![image](https://user-images.githubusercontent.com/69753101/166159146-ee04eebc-d6b0-4e22-b401-3fdfbd5240e8.png)
 
 ##### Обновление представления orders
-
+https://github.com/memphis94/de-project-1/blob/8a5f0a0acf5cff00c80314326bea046c62c1ab8d/src/%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D1%8F%20orders.txt
