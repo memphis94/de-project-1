@@ -120,9 +120,15 @@ https://github.com/memphis94/de-project-1/blob/5cd808be625cbe4612cb62e248115dab8
 ##### Наполнение витрины данными
 https://github.com/memphis94/de-project-1/blob/8a5f0a0acf5cff00c80314326bea046c62c1ab8d/src/%D0%9D%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B8%D1%82%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8.txt
 
+**Version 2**
+https://github.com/memphis94/de-project-1/blob/efc51932c4e66322000821edd2a5ed158b851751/src/%D0%9D%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B8%D1%82%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8%20V2.txt
+
 #### Доработка витрины
 Вид обновлённых представлений
 ![image](https://user-images.githubusercontent.com/69753101/166159146-ee04eebc-d6b0-4e22-b401-3fdfbd5240e8.png)
 
 ##### Обновление представления orders
 https://github.com/memphis94/de-project-1/blob/8a5f0a0acf5cff00c80314326bea046c62c1ab8d/src/%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D1%8F%20orders.txt
+
+**Version 2**
+https://github.com/memphis94/de-project-1/blob/efc51932c4e66322000821edd2a5ed158b851751/src/%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D1%8F%20orders%20V2.txt
