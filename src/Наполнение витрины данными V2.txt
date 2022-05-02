@@ -1,0 +1,31 @@
+--Наполнение витрины данными
+
+INSERT INTO dm_rfm_segments (user_id,recency,frequency,monetary_value)
+
+WITH closed_orders AS(SELECT o.user_id,
+       o.order_id,
+       o."cost",
+       o.order_ts 
+FROM analysis.orders o JOIN analysis.orderstatuses o2
+ON o.status = o2.id 
+WHERE o2."key" ='Closed'
+),
+
+users_aggregates AS (SELECT u.id AS user_id,
+       COALESCE (COUNT(co.order_id),0) AS orders_cnt,
+       COALESCE (SUM(co."cost"),0) AS orders_sum,
+       COALESCE (MAX(co.order_ts), date '1900-01-01') AS last_order,
+       count(*) OVER ()      
+FROM users u
+LEFT JOIN closed_orders co ON u.id =co.user_id 
+GROUP BY 1
+ORDER BY 2
+)
+
+SELECT 
+	user_id,
+	NTILE(5) OVER (ORDER BY last_order) AS "Recency",
+	NTILE(5) OVER (ORDER BY orders_cnt) AS "Frequency",
+	NTILE(5) OVER (ORDER BY orders_sum) AS "Monetary Value"
+FROM users_aggregates
+ORDER BY 2
